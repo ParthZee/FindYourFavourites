@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Login</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="fonts/font-awesome-4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Poppins"
+    />
+  </head>
+  <body class="login-body">
+    <div class="limiter">
+      <div class="container-login">
+        <div class="wrap-login">
+          <div class="login-form-title">
+            <span class="login-form-title-1"> Login </span>
+          </div>
+
+          <form
+            class="login-form validate-form"
+            id="loginForm"
+            onsubmit="return validateForm()"
+          >
+            <div
+              class="wrap-input validate-input m-b-26"
+              data-validate="Username is required"
+            >
+              <span class="label-input">Username</span>
+              <input
+                class="login-field-input"
+                type="text"
+                id="username"
+                placeholder="Enter username"
+              />
+              <span class="focus-input"></span>
+            </div>
+
+            <div
+              class="wrap-input validate-input m-b-18 mt-3"
+              data-validate="Password is required"
+            >
+              <span class="label-input">Password</span>
+              <input
+                class="login-field-input"
+                type="password"
+                id="password"
+                placeholder="Enter password"
+              />
+              <span class="focus-input"></span>
+            </div>
+
+            <div class="flex-sb-m w-full p-b-30 mb-3 mt-3">
+              <div>
+                <div>
+                  <a href="#" class="anchor-login txt1"> Forgot Password? </a>
+                </div>
+                <div>
+                  <a href="signup.html" class="anchor-login txt1">
+                    New to FYF?
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="container-login-form-btn">
+              <button class="login-form-btn">Login</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Form Validation -->
+    <script>
+      function validateForm() {
+        const usernameInput = document.getElementById("username");
+        const passwordInput = document.getElementById("password");
+
+        // Get form elements
+        const username = usernameInput.value.trim();
+        const password = passwordInput.value.trim();
+
+        // Initialize a flag to track if there are any validation errors
+        let hasError = false;
+
+        // Check the fields and display alerts for the first empty field
+        if (username === "") {
+          alert("Username is required.");
+          hasError = true;
+        } else if (password === "") {
+          alert("Password is required.");
+          hasError = true;
+        }
+
+        // If there are no validation errors, submit the form
+        return !hasError;
+      }
+    </script>
+  </body>
+</html>
